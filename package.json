@@ -1,0 +1,32 @@
+{
+  "name": "web-core-router",
+  "version": "0.0.1",
+  "description": "a template for basic js packages",
+  "main": "src/index.js",
+  "author": "jchrzanowski@salesforce.com",
+  "license": "MIT",
+  "homepage": "https://github.com/relateiq/web-core-router",
+  "repository": {
+    "url": "https://github.com/relateiq/web-core-router.git"
+  },
+  "bugs": {
+    "url": "https://github.com/relateiq/web-core-router/issues"
+  },
+  "iqproj": {
+    "app": false
+  },
+  "scripts": {
+    "test": "bin/iqb test",
+    "start": "bin/iqb start",
+    "preversion": "bin/iqb build",
+    "postpublish": "git push"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "chokidar-cli": "~1.0.1",
+    "tape": "~4.2.1"
+  },
+  "publishConfig": {
+    "registry": "https://relateiq.artifactoryonline.com/relateiq/api/npm/npm-local/"
+  }
+}
