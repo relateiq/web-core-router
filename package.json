@@ -21,7 +21,10 @@
     "preversion": "bin/iqb karma",
     "postpublish": "git push"
   },
-  "dependencies": {},
+  "dependencies": {
+    "angular-ui-router": "~0.2.18",
+    "capitalize": "~1.0.0"
+  },
   "devDependencies": {
     "browserify": "~13.0.0",
     "browserify-istanbul": "~2.0.0",
