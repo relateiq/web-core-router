@@ -13,6 +13,7 @@ module.exports = {
     stateConfig: require('./lib/RouterCoreStateConfig'),
     run: require('./lib/RouterCoreRun'),
     stateCtrlGenerator: require('./lib/RouterCoreStateCtrlGenerator'),
+    defaultRuleConfig: require('./lib/RouterCoreRuleConfig'),
 
     transforms: {
         booleanTransform: require('./lib/transforms/BooleanTransform'),
