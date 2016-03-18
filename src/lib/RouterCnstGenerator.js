@@ -1,4 +1,4 @@
-module.exports = function(states) {
+module.exports = function() {
     var cnstShell = {
         PARAM_VALUES: {
             FIELD_PREFIX: 'f',
