@@ -15,6 +15,8 @@ module.exports = {
     stateCtrlGenerator: require('./lib/RouterCoreStateCtrlGenerator'),
     defaultRuleConfig: require('./lib/RouterCoreRuleConfig'),
 
+    makeRouterCnst: require('./lib/RouterCnstGenerator'),
+
     transforms: {
         booleanTransform: require('./lib/transforms/BooleanTransform'),
         numberTransform: require('./lib/transforms/NumberTransform')
