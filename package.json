@@ -1,6 +1,6 @@
 {
   "name": "web-core-router",
-  "version": "0.0.3",
+  "version": "0.1.0",
   "description": "a template for basic js packages",
   "main": "src/index.js",
   "author": "jchrzanowski@salesforce.com",
