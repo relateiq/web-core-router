@@ -1,6 +1,6 @@
 // inject RouterCoreSrvc to init it
-module.exports = function(opts) {
-    return /* @ngInject */ function($state, $rootScope, $document, $urlRouter, RiqDialogSrvc, RouterCoreViewModelSrvc, RouterCoreSrvc, RouterCoreViewModelStateSrvc) {
+module.exports = function (opts) {
+    return /* @ngInject */ function ($state, $rootScope, $document, $urlRouter, RouterCoreViewModelSrvc, RouterCoreSrvc, RouterCoreViewModelStateSrvc) {
         //require to init and sync ui-router post the riqSignup app
         $urlRouter.sync();
 
@@ -9,7 +9,7 @@ module.exports = function(opts) {
 
         // Since $stateChangeSuccess fires before the state's controller gets instantiated to set a viewModel,
         // anything using a viewModel in $stateChangeSuccess needs to have the updated viewModel
-        $rootScope.$on('$stateChangeSuccess', function() {
+        $rootScope.$on('$stateChangeSuccess', function () {
             var stateName = RouterCoreSrvc.getCurrentStateName();
             var vm = RouterCoreViewModelSrvc.getViewModelForStateName(stateName, opts.RouterCnst.STATES, opts.RouterCnst.GLOBAL_MODEL_BINDINGS);
             RouterCoreViewModelStateSrvc.setCurrentViewModel(vm);
@@ -21,7 +21,7 @@ module.exports = function(opts) {
         });
 
         // for error logging
-        $rootScope.$on('$stateChangeError', function() {
+        $rootScope.$on('$stateChangeError', function () {
             console.log(arguments);
         });
     };
