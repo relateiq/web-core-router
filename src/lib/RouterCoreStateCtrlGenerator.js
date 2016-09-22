@@ -1,6 +1,6 @@
-module.exports = function(routeStateConfig, opts) {
+module.exports = function (routeStateConfig, opts) {
 
-    return /* @ngInject */ function($scope, $state, $injector, RouterCoreSrvc, RouterCoreViewModelSrvc, RouterCoreViewModelStateSrvc, RouterCoreUtilSrvc, UtilSrvc) {
+    return /* @ngInject */ function ($scope, $state, $injector, RouterCoreSrvc, RouterCoreViewModelSrvc, RouterCoreViewModelStateSrvc, RouterCoreUtilSrvc) {
         if (!RouterCoreViewModelSrvc.hasModelBindings(routeStateConfig)) {
             // reset view model state when there are no modelBindings
             RouterCoreViewModelStateSrvc.setCurrentViewModel();
@@ -36,12 +36,15 @@ module.exports = function(routeStateConfig, opts) {
                 RouterCoreUtilSrvc.updateSearchNoReload(newParamState.query, replaceHistoryRecord);
             }
 
-            UtilSrvc.safeApply($scope);
+            var phase = $scope.$root && $scope.$root.$$phase;
+            if (phase !== '$apply' && phase !== '$digest') {
+                $scope.$apply();
+            }
         }).debounce(1);
 
         // double bind the viewModel search params back to the location without causing a reload
         // since we watch `true`, make sure it is only for defined modelBindings
-        RouterCoreViewModelSrvc.forEachModelBinding(routeStateConfig, function(key) {
+        RouterCoreViewModelSrvc.forEachModelBinding(routeStateConfig, function (key) {
             $scope.$watch('viewModel.' + key, viewModelWatchFn, true);
         }, opts.RouterCnst.GLOBAL_MODEL_BINDINGS);
     };
