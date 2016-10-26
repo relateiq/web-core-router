@@ -9,6 +9,9 @@
   "repository": {
     "url": "https://github.com/relateiq/web-core-router.git"
   },
+  "publishConfig": {
+    "registry": "https://registry.npmjs.org/"
+  },
   "bugs": {
     "url": "https://github.com/relateiq/web-core-router/issues"
   },
